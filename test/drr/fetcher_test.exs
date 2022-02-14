@@ -5,7 +5,7 @@ defmodule DRR.FetchTest do
   import Tesla.Mock
 
   test "gets and parses a page" do
-    mock_global(fn
+    mock(fn
       %{method: :get} ->
         %Tesla.Env{
           status: 200,
@@ -25,7 +25,8 @@ defmodule DRR.FetchTest do
                    %{name: "Taylor Prickett", rating: 50}
                  ],
                  rating: 50,
-                 user: "Rita Shar"
+                 user: "Rita Shar",
+                 id: "r9162312"
                },
                %{
                  body:
@@ -33,7 +34,8 @@ defmodule DRR.FetchTest do
                  date: "February 10, 2022",
                  employees: [%{name: "Adrian \"AyyDee\" Cortes", rating: 50}],
                  rating: 50,
-                 user: "Stacey30"
+                 user: "Stacey30",
+                 id: "r9159276"
                },
                %{
                  body:
@@ -44,7 +46,8 @@ defmodule DRR.FetchTest do
                    %{name: "Marissa Wallace", rating: 50}
                  ],
                  rating: 50,
-                 user: "ellisonsusan80"
+                 user: "ellisonsusan80",
+                 id: "r9156936"
                },
                %{
                  body:
@@ -56,7 +59,8 @@ defmodule DRR.FetchTest do
                    %{name: "Taylor Prickett", rating: 50}
                  ],
                  rating: 50,
-                 user: "feliciastephenson17"
+                 user: "feliciastephenson17",
+                 id: "r9148870"
                },
                %{
                  body:
@@ -64,7 +68,8 @@ defmodule DRR.FetchTest do
                  date: "February 04, 2022",
                  employees: [%{name: "Kyre Lewis", rating: 50}],
                  rating: 50,
-                 user: "gary"
+                 user: "gary",
+                 id: "r9141474"
                },
                %{
                  body:
@@ -72,7 +77,8 @@ defmodule DRR.FetchTest do
                  date: "January 27, 2022",
                  employees: [%{name: "Adrian \"AyyDee\" Cortes", rating: 50}],
                  rating: 50,
-                 user: "johnkim2005webb"
+                 user: "johnkim2005webb",
+                 id: "r9110438"
                },
                %{
                  body:
@@ -80,7 +86,8 @@ defmodule DRR.FetchTest do
                  date: "January 27, 2022",
                  employees: [%{name: "Tristian Olivares", rating: 50}],
                  rating: 50,
-                 user: "Tonya.griffin903"
+                 user: "Tonya.griffin903",
+                 id: "r9109429"
                },
                %{
                  body:
@@ -91,7 +98,8 @@ defmodule DRR.FetchTest do
                    %{name: "Taylor Prickett", rating: 50}
                  ],
                  rating: 50,
-                 user: "Jody"
+                 user: "Jody",
+                 id: "r9104449"
                },
                %{
                  body:
@@ -99,7 +107,8 @@ defmodule DRR.FetchTest do
                  date: "January 25, 2022",
                  employees: [%{name: "Tristian Olivares", rating: 50}],
                  rating: 50,
-                 user: "jolynschneider6"
+                 user: "jolynschneider6",
+                 id: "r9100932"
                },
                %{
                  body:
@@ -117,7 +126,8 @@ defmodule DRR.FetchTest do
                    %{name: "Freddie Tomlinson", rating: 50}
                  ],
                  rating: 50,
-                 user: "Mkoballard78"
+                 user: "Mkoballard78",
+                 id: "r9074594"
                }
              ]
            ]

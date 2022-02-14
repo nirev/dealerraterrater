@@ -33,6 +33,7 @@ defmodule DRR.Parser do
 
   defp parse_entry(entry) do
     %{
+      id: get_id(entry),
       date: get_text(entry, ".review-date div:first-child"),
       rating: get_rating(entry, ".dealership-rating .rating-static"),
       body:
@@ -49,6 +50,13 @@ defmodule DRR.Parser do
     doc
     |> Floki.find(selector)
     |> Floki.text()
+    |> String.trim()
+  end
+
+  defp get_id(entry) do
+    entry
+    |> Floki.attribute(".review-entry > a:first-child", "name")
+    |> List.first()
     |> String.trim()
   end
 
