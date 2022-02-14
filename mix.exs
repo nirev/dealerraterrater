@@ -22,7 +22,9 @@ defmodule DRR.MixProject do
   defp deps do
     [
       {:tesla, "> 0.0.0"},
-      {:floki, "> 0.0.0"}
+      {:floki, "> 0.0.0"},
+      {:hackney, "> 0.0.0"},
+      {:jason, "> 0.0.0"}
     ]
   end
 end
