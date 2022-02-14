@@ -23,7 +23,7 @@ defmodule DRR.Parser do
 
       next =
         doc
-        |> Floki.find(".sliding_pagination .next a")
+        |> Floki.find(~s(link[rel="next"]))
         |> Floki.attribute("href")
         |> List.first()
 
