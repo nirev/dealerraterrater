@@ -1,4 +1,4 @@
-defmodule DRR.Fetch do
+defmodule DRR.Fetcher do
   @moduledoc """
   Fetches pages from DealerRater and returns a json representation
   """
@@ -46,18 +46,18 @@ defmodule DRR.Fetch do
       rating: get_rating(entry, ".dealership-rating .rating-static"),
       body:
         get_text(entry, ".review-wrapper .review-title") <>
+          " " <>
           get_text(entry, ".review-wrapper .review-whole"),
       user: get_text(entry, ".review-wrapper div span.notranslate") |> String.replace("by ", ""),
       employees: get_employees(entry)
     }
-
-    # Floki.text(entry)
   end
 
   defp get_text(doc, selector) do
     doc
     |> Floki.find(selector)
     |> Floki.text()
+    |> String.trim()
   end
 
   defp get_rating(entry, selector) do
