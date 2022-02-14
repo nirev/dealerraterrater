@@ -21,10 +21,10 @@ defmodule DRR.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:tesla, "> 0.0.0"},
       {:floki, "> 0.0.0"},
       {:hackney, "> 0.0.0"},
-      {:jason, "> 0.0.0"}
+      {:jason, "> 0.0.0"},
+      {:tesla, "> 0.0.0"}
     ]
   end
 end
