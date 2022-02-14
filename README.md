@@ -20,14 +20,14 @@ Please include documentation on how to run your application along with how to ru
 Three separate steps:
 
 Fetching:
-1. Use Tesla to download pages
-2. Use floki to parse pages
-3. return json entries for each page
+1. Use Tesla to download pages [x]
+2. Use floki to parse pages [x]
+3. return json entries for each page [x]
 
 Rating:
-1. Rate each entry using a Rater module
-2. Rater module has several Rules that are applied
-3. Each rule has a weight and applies a criteria
+1. Rate each entry using a Rater module [x]
+2. Rater module has several Rules that are applied [x]
+3. Each rule has a weight and applies a criteria [x]
 
 Output
 1. Sort entries by rating of overly positive
