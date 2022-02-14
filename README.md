@@ -1,6 +1,6 @@
 # DealerRaterRater
 
-A simple example app that reads reviews from DealerRater.com and analysis those
+A simple example app that reads reviews from DealerRater.com and analyzes those reviews according to defined rules
 
 ## Brief
 
@@ -30,8 +30,26 @@ Rating:
 3. Each rule has a weight and applies a criteria [x]
 
 Output
-1. Sort entries by rating of overly positive
-2. Print top three
+1. Sort entries by rating of overly positive [x]
+2. Print top three [x]
 
-## Installation
+## Instructions
 
+The project is best run if using asdf to manage elixir/erlang versions. 
+Follow instructions at https://asdf-vm.com/ to install it.
+
+After that there are three make targets to run:
+
+1. `make setup`, for making sure everything's ready to run
+2. `make run`, for running the code for fetching the first 5 pages, rating and printing the top three
+3. `make test`, for running tests
+
+## Notes
+
+1. all dependencies are used with "> 0.0.0" spec to get the latest version, when going to prod the recommended way is to pin the version and have a dependency update process (ie dependabot)
+2. there are only two simple rules for rating entries. the goal was to show how such rules could be implemented, and not really write the best rating system:
+   1. `Intensity` rule, which checks for existence of certain expressions like "awesome" and "above and beyond"
+   2. `Stars` which just checks the rating
+3. http client is Tesla with hackney, as the default httpc one emits warnings in erlang 24. hackney fixes that error and doesn't require setting up a supervision tree
+4. the main entry point `DRR.run/` does everything in a single go, which is fine for the amount of pages/entries needed
+5. top entries are printed in json, one per line, ordered from most positive to least positive 
