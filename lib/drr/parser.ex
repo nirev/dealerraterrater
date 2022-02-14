@@ -39,7 +39,8 @@ defmodule DRR.Parser do
         get_text(entry, ".review-wrapper .review-title") <>
           " " <>
           get_text(entry, ".review-wrapper .review-whole"),
-      user: get_text(entry, ".review-wrapper div span.notranslate") |> String.replace("by ", ""),
+      user:
+        get_text(entry, ".review-wrapper > div > span.notranslate") |> String.replace("by ", ""),
       employees: get_employees(entry)
     }
   end
